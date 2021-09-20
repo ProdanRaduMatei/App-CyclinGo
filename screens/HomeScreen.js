@@ -189,8 +189,8 @@ const styles = StyleSheet.create({
     right: 0,
   },
   statusBarElements: {
-    flexDirection: 'column',
-    paddingHorizontal: 45,
+    flexDirection: 'row',
+    paddingHorizontal: 30,
     alignItems: 'center',
   },
   statusScore: {
@@ -199,12 +199,12 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   iconStatus: {
-    paddingTop: 10,
     paddingBottom: 2,
+    paddingRight: 3,
   },
   statusBar: {
     backgroundColor: "#00b300",
-    height: 82,
+    height: 55,
     flexDirection: 'row',
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
