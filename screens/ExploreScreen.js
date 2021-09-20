@@ -32,28 +32,6 @@ const ExploreScreen = () => {
 
   const initialMapState = {
     markers,
-    categories: [
-      { 
-        name: 'Fastfood Center', 
-        icon: <MaterialCommunityIcons style={styles.chipsIcon} name="food-fork-drink" size={18} />,
-      },
-      {
-        name: 'Restaurant',
-        icon: <Ionicons name="ios-restaurant" style={styles.chipsIcon} size={18} />,
-      },
-      {
-        name: 'Dineouts',
-        icon: <Ionicons name="md-restaurant" style={styles.chipsIcon} size={18} />,
-      },
-      {
-        name: 'Snacks Corner',
-        icon: <MaterialCommunityIcons name="food" style={styles.chipsIcon} size={18} />,
-      },
-      {
-        name: 'Hotel',
-        icon: <Fontisto name="hotel" style={styles.chipsIcon} size={15} />,
-      },
-  ],
     region: {
       latitude: 46.7712101,
       longitude: 23.6236353,
@@ -119,8 +97,6 @@ const ExploreScreen = () => {
     if (Platform.OS === 'ios') {
       x = x - SPACING_FOR_CARD_INSET;
     }
-
-    _scrollView.current.scrollTo({x: x, y: 0, animated: true});
   }
 
   const _map = React.useRef(null);
@@ -144,7 +120,7 @@ const ExploreScreen = () => {
             ],
           };
           return (
-            <MapView.Marker key={index} coordinate={marker.coordinate} onPress={(e)=>onMarkerPress(e)}>
+            <MapView.Marker key={index} coordinate={marker.coordinate}>
               <Animated.View style={[styles.markerWrap]}>
                 <Animated.Image
                   source={require('../assets/map_marker.png')}
@@ -165,88 +141,11 @@ const ExploreScreen = () => {
         />
         <Ionicons name="ios-search" size={20} />
       </View>
-      <ScrollView
-        horizontal
-        scrollEventThrottle={1}
-        showsHorizontalScrollIndicator={false}
-        height={50}
-        style={styles.chipsScrollView}
-        contentInset={{ // iOS only
-          top:0,
-          left:0,
-          bottom:0,
-          right:20
-        }}
-        contentContainerStyle={{
-          paddingRight: Platform.OS === 'android' ? 20 : 0
-        }}
-      >
-        {state.categories.map((category, index) => (
-          <TouchableOpacity key={index} style={styles.chipsItem}>
-            {category.icon}
-            <Text>{category.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-      <Animated.ScrollView
-        ref={_scrollView}
-        horizontal
-        pagingEnabled
-        scrollEventThrottle={1}
-        showsHorizontalScrollIndicator={false}
-        snapToInterval={CARD_WIDTH + 20}
-        snapToAlignment="center"
-        style={styles.scrollView}
-        contentInset={{
-          top: 0,
-          left: SPACING_FOR_CARD_INSET,
-          bottom: 0,
-          right: SPACING_FOR_CARD_INSET
-        }}
-        contentContainerStyle={{
-          paddingHorizontal: Platform.OS === 'android' ? SPACING_FOR_CARD_INSET : 0
-        }}
-        onScroll={Animated.event(
-          [
-            {
-              nativeEvent: {
-                contentOffset: {
-                  x: mapAnimation,
-                }
-              },
-            },
-          ],
-          {useNativeDriver: true}
-        )}
-      >
-        {state.markers.map((marker, index) =>(
-          <View style={styles.card} key={index}>
-            <Image 
-              source={marker.image}
-              style={styles.cardImage}
-              resizeMode="cover"
-            />
-            <View style={styles.textContent}>
-              <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-              <StarRating ratings={marker.rating} reviews={marker.reviews} />
-              <Text numberOfLines={1} style={styles.cardDescription}>{marker.description}</Text>
-              <View style={styles.button}>
-                <TouchableOpacity
-                  onPress={() => {}}
-                  style={[styles.signIn, {
-                    borderColor: '#00b300',
-                    borderWidth: 1
-                  }]}
-                >
-                  <Text style={[styles.textSign, {
-                    color: '#00b300'
-                  }]}>Order Now</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        ))}
-      </Animated.ScrollView>
+      <View style={styles.buttonsBox}>
+        <Ionicons name="arrow-back-circle-outline" size={90} color="#00b300" style={styles.buttonIcon}/>
+        <Ionicons name="warning-outline" size={90} color="#ff0000" style={styles.buttonIcon}/>
+        <Ionicons name="arrow-forward-circle-outline" size={90} color="#00b300" style={styles.buttonIcon}/>
+      </View>
     </View>
   );
 };
@@ -257,9 +156,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  buttonIcon: {
+    paddingHorizontal: 25,
+  },
+  buttonsBox: {
+    flex: 3,
+    position: 'absolute',
+    paddingTop: 10,
+    paddingBottom: 10,
+    flexDirection: 'row',
+    width: '100%',
+    marginTop: '145%',
+    alignSelf: 'center',
+    backgroundColor: "#fff",
+  },
   searchBox: {
-    position:'absolute', 
-    marginTop: Platform.OS === 'ios' ? 40 : 20, 
+    position: 'absolute', 
+    marginTop: Platform.OS === 'ios' ? 10 : 5, 
     flexDirection:"row",
     backgroundColor: '#fff',
     width: '90%',
