@@ -83,9 +83,12 @@ This project is licensed under the MIT License.
 ### 🙋‍♀️ Feedback & Contact
 
 For feedback, suggestions, or contributions, feel free to open an issue or contact:
-LinkTree: https://linktr.ee/CyclinGo?fbclid=IwAR1UGBgWE4SitS-8xi7mAzJ0Eg7sbqK6IJ2a7-koHL8rJPk-lzOym3TNEao
-📧 mateiprodan1@gmail.com
-🔗 https://www.linkedin.com/in/matei-prodan-7624341a4/
+
+  LinkTree: https://linktr.ee/CyclinGo?fbclid=IwAR1UGBgWE4SitS-8xi7mAzJ0Eg7sbqK6IJ2a7-koHL8rJPk-lzOym3TNEao
+  
+  📧 mateiprodan1@gmail.com
+  
+  🔗 https://www.linkedin.com/in/matei-prodan-7624341a4/
 
 ---
 
