@@ -30,6 +30,7 @@
 ## 🎥 Demo
 Watch the CyclinGo demo here: [CyclinGo Demo Video](https://drive.google.com/file/d/1FZQoEJhHWO8r2TuPzxoxgmUynKFLTkUb/view?usp=sharing)
 
+---
 
 ## 📱 Tech Stack
 
