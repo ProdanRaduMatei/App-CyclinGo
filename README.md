@@ -1,6 +1,6 @@
 # 🚴‍♂️ CyclinGo – Smart Signaling Companion App
 
-**CyclinGo** is a mobile application developed in **Flutter** that connects via **Bluetooth** to a smart signaling vest for cyclists. Designed to enhance road safety and visibility, CyclinGo offers customizable visual signals, real-time navigation, and a unique advertising display feature.
+**CyclinGo** is a mobile application developed in **React Native** that connects via **Bluetooth** to a smart signaling vest for cyclists. Designed to enhance road safety and visibility, CyclinGo offers customizable visual signals, real-time navigation, and a unique advertising display feature.
 
 ---
 
@@ -29,9 +29,9 @@
 
 ## 📱 Tech Stack
 
-- **Frontend:** Flutter (Dart)
+- **Frontend:** React Native (Typescript)
 - **Connectivity:** Bluetooth Low Energy (BLE)
-- **Maps:** Google Maps API (Flutter plugin)
+- **Maps:** Google Maps API (plugin)
 - **Device:** Custom Arduino/ESP32-based LED signaling vest (external hardware)
 
 ---
@@ -45,7 +45,7 @@ The app communicates with the vest over Bluetooth to send signal commands and co
 ## 🛠 Setup & Installation
 
 ### Prerequisites
-- Flutter SDK (>= 3.0)
+- React Native (>= 0.60)
 - Android Studio / VS Code
 - A compatible Android/iOS device with Bluetooth enabled
 
@@ -56,11 +56,11 @@ The app communicates with the vest over Bluetooth to send signal commands and co
    cd CyclinGo
 2. Install dependencies:
    ```bash
-   flutter pub get
+   npm install
    ```
 3.	Connect your device and run the app:
    ```bash
-   flutter run
+   npm run
    ```
 
 ⚠️ Ensure that location and Bluetooth permissions are enabled on your device.
@@ -68,7 +68,7 @@ The app communicates with the vest over Bluetooth to send signal commands and co
 ---
 
 ### 👨‍💻 Contributors
-  Prodan Radu-Matei – Flutter Developer, Bluetooth Integration
+  Prodan Radu-Matei – Mobile Developer, Bluetooth Integration
   
   Hardware team
 
